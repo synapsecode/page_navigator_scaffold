@@ -1,6 +1,6 @@
 name: page_navigator_scaffold
 description: A Dart package that makes multi-page swiping UI extremely easy to build.
-version: 0.0.1
+version: 0.0.2
 author: Manas Hejmadi<manashejmadi@gmail.com>
 homepage: https://github.com/synapsecode/page_navigator_scaffold
 
