@@ -164,7 +164,8 @@ class _PageNavigatorScaffoldState extends State<PageNavigatorScaffold>
       ),
       bottomSheet: widget.scaffoldOptions?.bottomSheeet,
       bottomNavigationBar: BottomNavigationBar(
-        // fixedColor: widget.bottomNavbarOptions?.textColor,
+        selectedLabelStyle: widget.bottomNavbarOptions?.selectedLabelStyle,
+        unselectedLabelStyle: widget.bottomNavbarOptions?.unselectedLabelStyle,
         selectedItemColor: widget.bottomNavbarOptions?.activeColor ??
             widget.bottomNavbarOptions?.textColor ??
             Colors.white,
@@ -188,7 +189,7 @@ class _PageNavigatorScaffoldState extends State<PageNavigatorScaffold>
               .entries
               .map(
                 (entry) => BottomNavigationBarItem(
-                  tooltip: widget.pageNames?.elementAt(entry.key) ?? "",
+                  // tooltip: widget.pageNames?.elementAt(entry.key) ?? "",
                   icon: Icon(entry.value,
                       color: widget.bottomNavbarOptions?.baseColor),
                   activeIcon: Icon(entry.value,
@@ -270,7 +271,12 @@ class BottomNavBarOptions {
   final double iconSize;
   final BottomNavigationBarType bottomNavigationBarType;
 
+  final TextStyle selectedLabelStyle;
+  final TextStyle unselectedLabelStyle;
+
   BottomNavBarOptions({
+    this.selectedLabelStyle,
+    this.unselectedLabelStyle,
     this.baseColor,
     this.activeColor,
     this.backgroundColor = Colors.blue,
